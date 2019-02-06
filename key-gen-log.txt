@@ -1,0 +1,44 @@
+C:\Users\narays38\Documents\siva-ws>keytool -genkey -v -keystore alpha.jks -alias alpha -keyalg RSA -keysize 2048 -validity 1000
+Enter keystore password:
+Re-enter new password:
+What is your first and last name?
+  [Unknown]:  SN MADDULA
+What is the name of your organizational unit?
+  [Unknown]:  IT
+What is the name of your organization?
+  [Unknown]:  SNMADDULA
+What is the name of your City or Locality?
+  [Unknown]:  WAVEROCK
+What is the name of your State or Province?
+  [Unknown]:  HYDERABAD
+What is the two-letter country code for this unit?
+  [Unknown]:  IN
+Is CN=SN MADDULA, OU=IT, O=SNMADDULA, L=WAVEROCK, ST=HYDERABAD, C=IN correct?
+  [no]:  yes
+
+Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) with a validity of 1,000 days
+        for: CN=SN MADDULA, OU=IT, O=SNMADDULA, L=WAVEROCK, ST=HYDERABAD, C=IN
+Enter key password for <alpha>
+        (RETURN if same as keystore password):
+Re-enter new password:
+[Storing alpha.jks]
+
+Warning:
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore alpha.jks -destkeystore alpha.jks -deststoretype pkcs12".
+
+C:\Users\narays38\Documents\siva-ws>
+
+
+C:\Users\narays38\Documents\siva-ws>keytool -export -alias alpha -file alpha.der -keystore alpha.jks
+Enter keystore password:
+Certificate stored in file <alpha.der>
+
+Warning:
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore alpha.jks -destkeystore alpha.jks -deststoretype pkcs12".
+
+
+C:\Users\narays38\Documents\siva-ws>openssl x509 -inform der -in alpha.der -out alpha.crt
+
+C:\Users\narays38\Documents\siva-ws>
+
+
